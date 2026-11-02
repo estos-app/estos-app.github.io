@@ -1,20 +1,10 @@
+/* Hallmark · skeleton · built: the project · v2.0.0 */
 :root {
-  color-scheme: light dark;
-  --bg: #ffffff;
-  --text: #1c1c1e;
-  --muted: #5c5c61;
-  --link: #0a5bd8;
-  --rule: #d8d8dc;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111113;
-    --text: #ececef;
-    --muted: #a0a0a8;
-    --link: #7fb0ff;
-    --rule: #34343a;
-  }
+html, body {
+  overflow-x: clip;
 }
 
 * {
@@ -27,9 +17,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 1.0625rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: var(--text-size-body)/var(--line-height-body) var(--font-body);
 }
 
 main {
@@ -40,14 +30,14 @@ main {
 
 h1 {
   margin: 0 0 0.5rem;
-  font-size: 1.75rem;
-  line-height: 1.25;
+  font-size: var(--text-size-h1);
+  line-height: var(--line-height-h1);
 }
 
 h2 {
   margin: 2.25rem 0 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.3;
+  font-size: var(--text-size-h2);
+  line-height: var(--line-height-h2);
 }
 
 p,
@@ -64,25 +54,25 @@ li {
 }
 
 a {
-  color: var(--link);
+  color: var(--color-link);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--link);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
 .meta {
   margin: 0 0 1.5rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
+  color: var(--color-muted);
+  font-size: var(--text-size-small);
 }
 
 nav {
   margin: 0 0 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--rule);
-  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--color-rule);
+  font-size: var(--text-size-small);
 }
 
 nav a {
@@ -91,7 +81,7 @@ nav a {
 
 dt {
   margin-top: 1.5rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
 }
 
 dd {
