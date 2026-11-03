@@ -28,19 +28,55 @@
 }
 
 /* Source: the app's asset catalog. The repo and commit are named in the project instructions. */
+/* Roles for this page, mapped onto the app colors above. No color outside that block. */
 :root {
   --color-paper: var(--color-canvas);
-  --color-link: var(--color-accent);
+  --color-paper-3: var(--color-canvas);
+  --color-ink-2: var(--color-detail-gray);
   --color-muted: var(--color-detail-gray);
-  --color-rule: var(--color-detail-gray);
+  --color-rule: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --color-accent-ink: var(--color-canvas);
   --color-focus: var(--color-accent);
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --text-size-body: 1.0625rem;
-  --text-size-h1: 1.75rem;
-  --text-size-h2: 1.25rem;
-  --text-size-small: 0.9375rem;
-  --line-height-body: 1.6;
-  --line-height-h1: 1.25;
-  --line-height-h2: 1.3;
-  --weight-semibold: 600;
+  --color-stage: var(--color-ink);
+  --color-on-stage: var(--color-canvas);
+  --color-well: var(--color-accent);
+  --color-on-well: var(--color-canvas);
+  --color-selection: var(--color-accent);
+  --color-tap-highlight: transparent;
+  --color-on-selection: var(--color-canvas);
+
+  --font-display: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Numans", ui-sans-serif, system-ui, sans-serif;
+  --weight-regular: 400;
+  --weight-heavy: 800;
+  --synthesis-none: none;
+  --figures-tabular: tabular-nums;
+}
+
+@font-face { font-family: "Lato"; src: url("fonts/Lato-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lato"; src: url("fonts/Lato-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lato"; src: url("fonts/Lato-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lato"; src: url("fonts/Lato-Heavy.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Numans"; src: url("fonts/Numans-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+
+/* Scale, spacing and radius from the Hallmark custom scaffold, resized for this page. */
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.875rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem;
+  --text-lead: clamp(1.1875rem, 0.25vw + 1.125rem, 1.375rem);
+  --text-title: clamp(1.25rem, 0.6vw + 0.95rem, 1.625rem);
+  --text-section: clamp(2.125rem, 2.4vw + 1.1rem, 3.5rem);
+  --text-display: clamp(2.75rem, 5.5vw + 0.9rem, 5.75rem);
+  --text-count: clamp(5.5rem, 9vw + 2rem, 11rem);
+  --text-close: clamp(1.625rem, 2vw + 1rem, 3rem);
+  --text-mark: 1.5rem;
+  --leading-display: 1.02; --leading-head: 1.08; --leading-body: 1.55;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px;
+  --masthead-h: 88px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --radius-band: 36px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: normal;
 }

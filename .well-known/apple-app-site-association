@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TC6BB73Q2P.com.palintrope.tabatatimer"],
+        "components": [{"/": "/*"}]
+      }
+    ]
+  }
+}

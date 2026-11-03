@@ -1,89 +1,512 @@
-/* Hallmark · skeleton · built: the project · v2.0.0 */
-:root {
-  color-scheme: light;
+/* Hallmark · shape: Stage and wells · genre: modern-minimal · theme: custom · job: try · idea: "A timer is read from across the room, so the run screens stand big on one dark stage that drops from the top of the page and spreads under the hero" · vibe: "calm, exact, read from across the room"
+ * paper: oklch(97.4% 0.017 88), the app's Canvas · accent: oklch(52.2% 0.14 147), the app's Accent · display: Lato 800, the app's face · body: Lato 400 · hero: the store name over the pitch "Leave the timing to Estos." as one two-size head on cream at left, the WORK screen on an ink column that drops from the page top at right · nav: the icon and the name, nothing else · footer: a closing ink band with the icon and the underlined store name as one store link, then four plain links · imagery: the product, real app screens and the widget tile · signature: the green WORK screen on the dark column that runs on into the interval band
+ * axes: light/grotesk-heavy/chromatic-green · posture: restrained (canvas ground, ink for the stage, the band, the Premium well and the closing band, the accent kept to focus and hover so green on this page means WORK) · tone: austere · contrast: pass · fold: pass · v2.0.0 */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+/* Phone pass: no tap flash and no font inflation in landscape. The brand and the badge are controls, so a long press selects nothing. */
+html { -webkit-tap-highlight-color: var(--color-tap-highlight); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.brand, .badge { touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: var(--leading-body); -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+::selection { background: var(--color-selection); color: var(--color-on-selection); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: var(--color-ink); text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-synthesis: var(--synthesis-none); overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+p:not([class]) { max-width: 65ch; }
+img, video { max-width: 100%; height: auto; display: block; }
+svg { display: block; }
+[hidden] { display: none !important; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); box-sizing: border-box; }
+.num, .figure, td.num { font-variant-numeric: var(--figures-tabular); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 60rem) { :root { --gutter: 24px; --masthead-h: 72px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --gap-columns: 16px; } }
+@media (prefers-reduced-motion: reduce) { *:not(.keep-motion), *:not(.keep-motion)::before, *:not(.keep-motion)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: P and S, a cream page with app screens could be any app; the dark column that drops from the page top and joins the interval band is the move only a timer read from across the room makes */
+/* Hallmark · hero-review: subagent fix · 5 findings · 4 resolved 1 partial (3: the split stays, now bled to the page edges and joined to the band) */
+/* Hallmark · finish-review: subagent fix · 6 findings and a zigzag note · 5 resolved, 1 dismissed (3: the widget tile is the supplied product picture, shown as is per the brief; retouching it is out of scope), zigzag partial (the interval band is now copy and two screens in one row, SET BREAK under WORK) · gap: none */
+/* Hallmark · dismissed 58 · the h1 word count: its first line is the full store name the brief requires in the hero, set at the title size as a second line, the display head under it is five words, and a separate name line above the h1 would be the eyebrow gate 54 bans */
+/* Hallmark · waive 1 · Lato 800 sets the display head · the brief fixes Lato as the Estos app face, owner ruling PLAN D2, so no other display face may ship */
+
+/* Masthead: icon and name only. */
+.masthead {
+  display: flex;
+  align-items: center;
+  height: var(--masthead-h);
+  position: relative;
+  z-index: var(--z-raised);
 }
 
-html, body {
-  overflow-x: clip;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  background: var(--color-paper);
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 48px;
   color: var(--color-ink);
-  font: var(--text-size-body)/var(--line-height-body) var(--font-body);
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
 }
 
-main {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+@media (hover: hover) and (pointer: fine) { .brand:hover { color: var(--color-accent); } }
+.brand:active { color: var(--color-ink-2); }
+
+.brand__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
 }
 
-h1 {
-  margin: 0 0 0.5rem;
-  font-size: var(--text-size-h1);
-  line-height: var(--line-height-h1);
+.brand__name {
+  font-family: var(--font-display);
+  font-size: var(--text-mark);
+  font-weight: var(--weight-heavy);
+  line-height: 1;
 }
+
+/* Hero: copy on cream, the WORK screen on the ink stage. */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+}
+
+.hero__copy {
+  grid-column: 1 / 8;
+  position: relative;
+  padding-right: var(--space-xl);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: var(--space-lg);
+  padding-block: var(--space-2xl);
+}
+
+.hero__title {
+  max-width: 9.5em;
+  display: grid;
+  gap: var(--space-md);
+  font-size: var(--text-display);
+  font-weight: var(--weight-heavy);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+/* The full store name is the head's first line, at a second size: one head, one weight, one colour. */
+.hero__name {
+  font-size: var(--text-title);
+  line-height: 1.2;
+}
+
+.nowrap { white-space: nowrap; }
+
+.hero__lede {
+  font-size: var(--text-title);
+  line-height: 1.3;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  margin-left: calc(-1 * var(--space-sm));
+  border-radius: var(--space-sm);
+}
+
+.badge img {
+  width: auto;
+  height: 48px;
+}
+
+/* The stage bleeds off the top and the right edge of the page: the shadow paints the bleed, the clip keeps it to the right and 2px past its foot, so no hairline shows where it meets the band. */
+.stage {
+  grid-column: 8 / 13;
+  position: relative;
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  margin: calc(-1 * var(--masthead-h)) 0 0;
+  padding: calc(var(--masthead-h) + var(--space-2xl)) 0 var(--space-xl) var(--space-2xl);
+  background: var(--color-stage);
+  box-shadow: 0 0 0 100vmax var(--color-stage);
+  clip-path: inset(0 -100vmax -2px 0);
+}
+
+/* A rounded inner corner where the stage meets the band: the shadow fills only the notch outside the curve. */
+.hero__copy::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: calc(-1 * var(--gap-columns));
+  width: var(--radius-band);
+  height: var(--radius-band);
+  border-bottom-right-radius: var(--radius-band);
+  box-shadow: calc(var(--radius-band) / 2) calc(var(--radius-band) / 2) 0 calc(var(--radius-band) / 2) var(--color-stage);
+}
+
+/* Screens: the iPhone display corner is about 13 percent of the width. */
+.screen {
+  width: 100%;
+  border-radius: 13% / 6%;
+}
+
+.screen--work { max-width: 360px; }
+
+/* Run band: the stage spreads under the hero, full bleed. */
+.run {
+  background: var(--color-stage);
+  box-shadow: 0 0 0 100vmax var(--color-stage);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-on-stage);
+}
+
+.run__inner {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+  padding-block: var(--space-2xl);
+}
+
+/* Copy, REST, SET BREAK in one row. At 360px from column 5 plus 8px, SET BREAK lands exactly under WORK. */
+.run__copy {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  align-self: center;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.run__screens {
+  grid-column: 5 / 13;
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--gap-columns);
+  padding-left: var(--space-xs);
+}
+
+.run__screens .screen { max-width: 360px; min-width: 0; }
 
 h2 {
-  margin: 2.25rem 0 0.5rem;
-  font-size: var(--text-size-h2);
-  line-height: var(--line-height-h2);
+  font-size: var(--text-section);
+  font-weight: var(--weight-heavy);
+  line-height: var(--leading-head);
+  max-width: 14em;
 }
 
-p,
-ul {
-  margin: 0.75rem 0;
+h3 {
+  font-size: var(--text-title);
+  font-weight: var(--weight-heavy);
+  line-height: 1.2;
 }
 
-ul {
-  padding-left: 1.25rem;
+/* One body size for every section line. */
+.run__copy p,
+.cue__copy p,
+.plan__copy p,
+.offer__free p,
+.offer__premium p {
+  font-size: var(--text-lead);
+  line-height: 1.45;
 }
 
-li {
-  margin: 0.35rem 0;
+/* Cue: type alone on cream, the countdown set in the app's digit face. */
+.cue {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+  align-items: start;
+  padding-block: var(--space-4xl) 0;
 }
 
-a {
-  color: var(--color-link);
+.cue__title { grid-column: 1 / 8; grid-row: 1; }
+
+.cue__count {
+  grid-column: 1 / 8;
+  grid-row: 2;
+  font-family: var(--font-outlier);
+  font-size: var(--text-count);
+  font-variant-numeric: var(--figures-tabular);
+  line-height: 1;
 }
 
-a:focus-visible {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
+.cue__copy {
+  grid-column: 8 / 13;
+  grid-row: 1 / 3;
+  display: grid;
+  gap: var(--space-md);
+  padding-left: var(--space-2xl);
+  padding-top: var(--space-xs);
 }
 
-.meta {
-  margin: 0 0 1.5rem;
-  color: var(--color-muted);
-  font-size: var(--text-size-small);
+.cue__lead { margin-bottom: var(--space-lg); }
+
+/* Plan: the dark list stands on cream; ink stays the run screens' stage and green stays WORK. */
+.plan {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+  row-gap: var(--space-xl);
+  padding-block: var(--space-4xl) 0;
 }
 
-nav {
-  margin: 0 0 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-rule);
-  font-size: var(--text-size-small);
+.plan__copy {
+  grid-column: 1 / 8;
+  grid-row: 1;
+  align-self: center;
+  display: grid;
+  gap: var(--space-md);
 }
 
-nav a {
-  margin-right: 1rem;
+.plan__copy h2 { margin-bottom: var(--space-xs); }
+.plan__copy p { max-width: 34ch; }
+.plan__create { margin-top: var(--space-md); }
+.plan__copy h3 { margin-top: var(--space-xl); }
+
+.plan__figure {
+  grid-column: 8 / 13;
+  grid-row: 1;
+  margin: 0;
+  padding-left: var(--space-2xl);
 }
 
-dt {
-  margin-top: 1.5rem;
-  font-weight: var(--weight-semibold);
+/* The list is cropped to its three cards; the corner stays near 13 percent of the width. */
+.screen--list {
+  max-width: 300px;
+  aspect-ratio: 1206 / 1640;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 13% / 9.6%;
 }
 
-dd {
-  margin: 0.35rem 0 0;
+/* Offer: free on cream, Premium in an ink well. */
+.offer {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+  align-items: center;
+  padding-block: calc(var(--space-4xl) + var(--space-xl)) var(--space-3xl);
+}
+
+.offer__free {
+  grid-column: 1 / 6;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.offer__free h3 { margin-top: var(--space-lg); }
+
+.offer__premium {
+  grid-column: 6 / 13;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-band);
+  background: var(--color-stage);
+  color: var(--color-on-stage);
+}
+
+.offer__widget {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.offer__widget figcaption { font-size: var(--text-sm); }
+.widget { width: 260px; }
+.offer__premium strong { font-weight: var(--weight-heavy); }
+
+/* Close: the store link on ink, the stage again at the foot of the page. */
+.close {
+  background: var(--color-stage);
+  box-shadow: 0 0 0 100vmax var(--color-stage);
+  clip-path: inset(0 -100vmax);
+  color: var(--color-on-stage);
+}
+
+.close__inner { padding-block: var(--space-2xl); }
+
+.close__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-lg);
+  color: var(--color-on-stage);
+  font-size: var(--text-close);
+  font-weight: var(--weight-heavy);
+  line-height: 1.1;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+
+.close__link img {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) and (pointer: fine) { .close__link:hover { text-decoration-thickness: 4px; } }
+.close__link:active { opacity: 0.8; }
+.close__link:focus-visible { outline-color: var(--color-on-stage); outline-offset: 6px; }
+
+/* Footer: the legal tier, under the band's edge. */
+.foot { padding-block: var(--space-lg) var(--space-xl); }
+
+.foot__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.foot__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule);
+  transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .foot__links a:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+}
+
+.foot__links a:active { color: var(--color-ink-2); }
+
+.badge:active { opacity: 0.85; }
+
+@media (max-width: 60rem) {
+  .hero__copy {
+    grid-column: 1 / -1;
+    gap: var(--space-md);
+    padding: var(--space-lg) 0 var(--space-xl);
+  }
+
+  .hero__title { gap: var(--space-sm); }
+  .badge { margin-top: var(--space-xs); }
+
+  .stage {
+    grid-column: 1 / -1;
+    justify-items: center;
+    margin: 0;
+    padding: var(--space-xl) 0 var(--space-lg);
+    clip-path: inset(0 -100vmax -2px);
+  }
+
+  .hero__copy::after { display: none; }
+
+  .screen--work { max-width: 230px; }
+
+  .run__inner,
+  .cue,
+  .plan,
+  .offer { grid-template-columns: minmax(0, 1fr); }
+
+  .run__inner {
+    row-gap: var(--space-xl);
+    padding-block: var(--space-lg) var(--space-2xl);
+  }
+
+  .run__copy,
+  .run__screens,
+  .cue__title,
+  .cue__count,
+  .cue__copy,
+  .plan__copy,
+  .plan__figure,
+  .offer__free,
+  .offer__premium {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-left: 0;
+  }
+
+  .run__copy { gap: var(--space-md); }
+  .run__screens { justify-content: center; gap: var(--space-md); }
+  .run__screens .screen { max-width: 160px; }
+
+  .cue { padding-top: var(--space-3xl); row-gap: var(--space-md); }
+  .cue__lead { margin-bottom: var(--space-sm); }
+
+  .plan { padding-top: var(--space-3xl); }
+  .plan__copy h3 { margin-top: var(--space-lg); }
+  .plan__figure { display: grid; justify-items: center; }
+  .screen--list { max-width: 230px; }
+
+  .offer {
+    row-gap: var(--space-xl);
+    padding-block: var(--space-3xl) var(--space-2xl);
+  }
+
+  .offer__premium {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .widget { width: 200px; }
+
+  .close__inner { padding-block: var(--space-xl); }
+  .close__link { gap: var(--space-md); }
+
+  .close__link img {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+/* Secondary pages: privacy and support */
+.secondary__main {
+  padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.secondary__intro {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-lg);
+}
+
+.secondary__intro p { font-size: var(--text-title); }
+.secondary__row:last-child { padding-bottom: 0; }
+
+.secondary__list { margin: var(--space-3xl) 0 0; }
+
+.secondary__row {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--gap-columns);
+  padding-block: var(--space-xl);
+}
+
+.secondary__row + .secondary__row { border-top: var(--rule-hair) solid var(--color-rule); }
+
+.secondary__row dt {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-heavy);
+  line-height: 1.2;
+}
+
+.secondary__row dd { margin: 0; max-width: 65ch; overflow-wrap: anywhere; font-size: var(--text-lead); }
+.secondary__date { margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-detail-gray); }
+
+@media (hover: hover) and (pointer: fine) { .secondary__main a:hover { color: var(--color-accent); } }
+.secondary__main a:active { color: var(--color-detail-gray); }
+
+@media (max-width: 60rem) {
+  .secondary__main { padding-block: var(--space-xl) var(--space-3xl); }
+  .secondary__list { margin-top: var(--space-xl); }
+  .secondary__row { grid-template-columns: 1fr; gap: var(--space-md); }
 }
