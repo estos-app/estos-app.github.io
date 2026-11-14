@@ -1,0 +1,26 @@
+# Estos: Tabata & Interval Timer
+
+> Estos: Tabata & Interval Timer is a crisp, snappy & reliable Tabata timer for iPhone.
+
+Key facts as of 14 November 2026:
+
+- Estos is an interval timer for iPhone in the Health & Fitness category. You do not need an account.
+- You build a timer from prep, work, rest, reps, sets and rest between sets. The classic Tabata (20 seconds of work, 10 seconds of rest, 8 reps) is ready on first launch.
+- Big digits count down each interval, with your rep, your set and the time left in your workout right above. You can name the exercise on every work interval.
+- Estos counts down 3-2-1 before each interval ends, and your playlist plays on at its own volume under the cues. This works with the screen locked too.
+- The free version runs your workouts as often as you like, with no run limit. You can save 2 timers you create for free. Imported timers do not count toward that limit.
+- Estos imports .tabata and .seconds files, so you keep your routine. Import is free.
+- Premium adds unlimited saved timers, sharing to friends or your other devices, and a Home Screen widget. It costs $9.99 a year or $24.99 once in the US App Store.
+- The App Store privacy label reads "Data Not Collected". Estos has no ads and no tracking. Timers and settings stay on the iPhone, and deleting the app deletes them. Apple processes Premium payments.
+- Turn up the text size, switch on Bold Text or use VoiceOver, and every screen adapts to you.
+
+## Pages
+
+- [Estos home page](https://estos-app.github.io/): what Estos is and how it works
+- [Estos FAQ](https://estos-app.github.io/faq/): answers about free use, saved timers, price, music, import, privacy, larger text and VoiceOver
+- [Privacy](https://estos-app.github.io/privacy/): the Estos privacy page
+- [Support](https://estos-app.github.io/support/): the Estos support page
+
+## App Store
+
+- [Estos: Tabata & Interval Timer on the App Store](https://apps.apple.com/app/id6817765756): the iPhone app

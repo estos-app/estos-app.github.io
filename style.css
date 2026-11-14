@@ -1,6 +1,6 @@
 /* Hallmark · shape: Stage and wells · genre: modern-minimal · theme: custom · job: try · idea: "A timer is read from across the room, so the run screens stand big on one dark stage that drops from the top of the page and spreads under the hero" · vibe: "calm, exact, read from across the room"
- * paper: oklch(97.4% 0.017 88), the app's Canvas · accent: oklch(52.2% 0.14 147), the app's Accent · display: Lato 800, the app's face · body: Lato 400 · hero: the store name over the pitch "Leave the timing to Estos." as one two-size head on cream at left, the WORK screen on an ink column that drops from the page top at right · nav: the icon and the name, nothing else · footer: a closing ink band with the icon and the underlined store name as one store link, then four plain links · imagery: the product, real app screens and the widget tile · signature: the green WORK screen on the dark column that runs on into the interval band
- * axes: light/grotesk-heavy/chromatic-green · posture: restrained (canvas ground, ink for the stage, the band, the Premium well and the closing band, the accent kept to focus and hover so green on this page means WORK) · tone: austere · contrast: pass · fold: pass · v2.0.0 */
+ * paper: oklch(97.4% 0.017 88), the app's Canvas · accent: oklch(52.2% 0.14 147), the app's Accent · display: Lato 800, the app's face · body: Lato 400 · hero: the store name over the pitch "Leave the timing to Estos." as one two-size head on cream at left, the WORK screen on an ink column that drops from the page top at right · nav: the icon and the name, nothing else · footer: a closing ink band with the icon and the underlined store name as one store link, then five plain links · imagery: the product, real app screens and the widget tile · signature: the green WORK screen on the dark column that runs on into the interval band
+ * axes: light/grotesk-heavy/chromatic-green · posture: restrained (canvas ground, ink for the stage, the band, the Premium well and the closing band, the accent kept to focus and hover so green on this page means WORK) · tone: austere · contrast: pass · fold: pass · copy: verbatim (the FAQ page answers, owner-approved word for word 2026-11-14) · v2.0.0 */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
 /* Phone pass: no tap flash and no font inflation in landscape. The brand and the badge are controls, so a long press selects nothing. */
@@ -28,6 +28,8 @@ svg { display: block; }
 /* Hallmark · hero-review: subagent fix · 5 findings · 4 resolved 1 partial (3: the split stays, now bled to the page edges and joined to the band) */
 /* Hallmark · finish-review: subagent fix · 6 findings and a zigzag note · 5 resolved, 1 dismissed (3: the widget tile is the supplied product picture, shown as is per the brief; retouching it is out of scope), zigzag partial (the interval band is now copy and two screens in one row, SET BREAK under WORK) · gap: none */
 /* Hallmark · dismissed 58 · the h1 word count: its first line is the full store name the brief requires in the hero, set at the title size as a second line, the display head under it is five words, and a separate name line above the h1 would be the eyebrow gate 54 bans */
+/* Hallmark · waive 78 · a Long Document of eight questions, whose question heads stay at the title size · the FAQ page is rows of questions and answers, not sections, so its h2 are item titles */
+/* Hallmark · waive 79 · the head is a single line above eight question rows that start right under it · a reference page of questions, so the rows are the content and the empty fold would only fill with copy the owner did not approve */
 /* Hallmark · waive 1 · Lato 800 sets the display head · the brief fixes Lato as the Estos app face, owner ruling PLAN D2, so no other display face may ship */
 
 /* Masthead: icon and name only. */
@@ -467,7 +469,7 @@ h3 {
   }
 }
 
-/* Secondary pages: privacy and support */
+/* Secondary pages: privacy, support and FAQ */
 .secondary__main {
   padding-block: var(--space-2xl) var(--space-3xl);
 }
@@ -510,3 +512,15 @@ h3 {
   .secondary__list { margin-top: var(--space-xl); }
   .secondary__row { grid-template-columns: 1fr; gap: var(--space-md); }
 }
+
+/* FAQ page: the ruled rows of the secondary pages, with a heading and a paragraph in place of dt and dd. */
+ul.secondary__list { padding: 0; list-style: none; }
+
+.secondary__row h2 {
+  font-size: var(--text-title);
+  font-weight: var(--weight-heavy);
+  line-height: 1.2;
+  max-width: none;
+}
+
+.secondary__row p { max-width: 65ch; overflow-wrap: anywhere; font-size: var(--text-lead); }
