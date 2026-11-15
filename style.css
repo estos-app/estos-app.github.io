@@ -147,9 +147,14 @@ svg { display: block; }
   box-shadow: calc(var(--radius-band) / 2) calc(var(--radius-band) / 2) 0 calc(var(--radius-band) / 2) var(--color-stage);
 }
 
+/* The picture wrapper and its sources add no box, so the image keeps its parent layout. */
+picture { display: contents; }
+picture source { display: none; }
+
 /* Screens: the iPhone display corner is about 13 percent of the width. */
 .screen {
   width: 100%;
+  aspect-ratio: 1206 / 2622; /* the 720px files round to 1565 tall, so pin the ratio of the originals */
   border-radius: 13% / 6%;
 }
 
